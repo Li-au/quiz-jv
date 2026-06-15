@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scanlines"></div>
+
+  <!-- Écran titre -->
+  <div id="screen-title" class="screen active">
+    <div class="title-container">
+      <h1 class="title-glitch" data-text="GAME QUIZ">GAME QUIZ</h1>
+      <p class="title-sub">◈ RECONNAIS LE JEU ◈</p>
+    </div>
+    <button id="btn-play" class="btn-neon">JOUER</button>
+    <div class="title-deco">◆ ◈ ◆</div>
+  </div>
+
+  <!-- Écran difficulté -->
+  <div id="screen-difficulty" class="screen">
+    <h2 class="screen-label">DIFFICULTÉ</h2>
+    <div class="diff-grid">
+      <button class="btn-diff btn-easy" data-diff="easy">
+        <span class="diff-name">FACILE</span>
+        <span class="diff-time">30 sec / question</span>
+        <span class="diff-desc">Jeux iconiques incontournables</span>
+      </button>
+      <button class="btn-diff btn-medium" data-diff="medium">
+        <span class="diff-name">MOYEN</span>
+        <span class="diff-time">20 sec / question</span>
+        <span class="diff-desc">Titres moins évidents</span>
+      </button>
+      <button class="btn-diff btn-hard" data-diff="hard">
+        <span class="diff-name">DIFFICILE</span>
+        <span class="diff-time">12 sec / question</span>
+        <span class="diff-desc">Pour les vrais gamers</span>
+      </button>
+    </div>
+    <button id="btn-back-diff" class="btn-ghost">← RETOUR</button>
+  </div>
+
+  <!-- Écran quiz -->
+  <div id="screen-quiz" class="screen">
+    <div class="quiz-header">
+      <div class="hud-item">
+        <span class="hud-label">QUESTION</span>
+        <span class="hud-value"><span id="q-num">1</span><span class="hud-sep">/10</span></span>
+      </div>
+      <div class="combo-badge" id="combo-badge">
+        <span class="combo-label">COMBO</span>
+        <span class="combo-value" id="combo-value">x1</span>
+      </div>
+      <div class="hud-item hud-right">
+        <span class="hud-label">SCORE</span>
+        <span class="hud-value" id="q-score">0</span>
+      </div>
+    </div>
+
+    <div class="timer-wrap">
+      <div class="timer-bar-bg">
+        <div class="timer-bar" id="timer-bar"></div>
+      </div>
+      <span class="timer-text" id="timer-text">30</span>
+    </div>
+
+    <div class="clue-box">
+      <div class="clue-label">◈ INDICE ◈</div>
+      <p class="clue-text" id="clue-text"></p>
+    </div>
+
+    <div class="options-grid" id="options-grid"></div>
+  </div>
+
+  <!-- Écran résultats -->
+  <div id="screen-results" class="screen">
+    <h2 class="screen-label">RÉSULTATS</h2>
+    <div class="final-score-wrap">
+      <div class="final-score-label">SCORE FINAL</div>
+      <div class="final-score" id="final-score">0</div>
+    </div>
+    <div class="results-stats">
+      <div class="stat-item">
+        <span class="stat-num" id="stat-correct">0</span>
+        <span class="stat-label">/ 10 CORRECTES</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">MEILLEUR COMBO</span>
+        <span class="stat-num" id="stat-combo">x1</span>
+      </div>
+    </div>
+    <div class="results-list" id="results-list"></div>
+    <div class="results-actions">
+      <button id="btn-retry" class="btn-neon">REJOUER</button>
+      <button id="btn-menu" class="btn-ghost">MENU</button>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
